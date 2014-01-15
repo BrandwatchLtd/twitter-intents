@@ -4,6 +4,8 @@
   "ignore": [
     "**/.*",
     "test",
+    "package",
+    "bower.json",
     "jshint.json",
     "package.json",
     "CONTRIBUTING",
