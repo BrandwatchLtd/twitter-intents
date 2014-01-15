@@ -8,7 +8,8 @@
     "test": "mocha-phantomjs -R dot /test/index.html",
     "start": "echo 'Tests available at: http://localhost:8080/test/index.html' && static",
     "lint": "jshint --show-non-errors --config jshint.json twitter-intents.js",
-    "build": "uglifyjs twitter-intents.js --mangle --comments '/Copyright \\d{3}/' --output twitter-intents.min.js"
+    "build": "uglifyjs twitter-intents.js --mangle --comments '/Copyright \\d{3}/' --output twitter-intents.min.js",
+    "ci": "npm run-script test && npm run-script lint"
   },
   "devDependencies": {
     "uglify-js": "2.4.8",
