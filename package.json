@@ -1,6 +1,6 @@
 {
   "name": "twitter-intents",
-  "version": "0.0.1",
+  "version": "1.0.0-dev",
   "description": "A minimal stand-in for the Twitter intents library",
   "homepage": "",
   "main": "twitter-intents.js",
@@ -17,7 +17,7 @@
     "phantomjs": "1.9.2-6",
     "node-static": "0.7.3"
   },
-  "repository": "",
+  "repository": "git@github.com:BrandwatchLtd/twitter-intents.git",
   "author": "Aron Carroll <aron@brandwatch.com>",
   "license": "MIT",
   "readmeFilename": "README",
