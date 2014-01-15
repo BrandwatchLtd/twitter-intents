@@ -1,0 +1,25 @@
+{
+  "name": "twitter-intents",
+  "version": "0.0.1",
+  "description": "A minimal stand-in for the Twitter intents library",
+  "homepage": "",
+  "main": "twitter-intents.js",
+  "scripts": {
+    "test": "mocha-phantomjs -R dot /test/index.html",
+    "start": "echo 'Tests available at: http://localhost:8080/test/index.html' && static",
+    "lint": "jshint --show-non-errors --config jshint.json twitter-intents.js",
+    "build": "uglifyjs twitter-intents.js --mangle --comments '/Copyright \\d{3}/' --output twitter-intents.min.js"
+  },
+  "devDependencies": {
+    "uglify-js": "2.4.8",
+    "jshint": "2.4.1",
+    "mocha-phantomjs": "3.3.1",
+    "phantomjs": "1.9.2-6",
+    "node-static": "0.7.3"
+  },
+  "repository": "",
+  "author": "Aron Carroll <aron@brandwatch.com>",
+  "license": "MIT",
+  "readmeFilename": "README",
+  "private": true
+}
