@@ -2,7 +2,7 @@
   "name": "twitter-intents",
   "version": "1.0.0-dev",
   "description": "A minimal stand-in for the Twitter intents library",
-  "homepage": "",
+  "homepage": "https://github.com/BrandwatchLtd/twitter-intents",
   "main": "twitter-intents.js",
   "scripts": {
     "test": "mocha-phantomjs -R dot /test/index.html",

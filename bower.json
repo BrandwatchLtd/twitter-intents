@@ -1,0 +1,14 @@
+{
+  "name": "twitter-intents",
+  "version": "1.0.0-dev",
+  "ignore": [
+    "**/.*",
+    "test",
+    "jshint.json",
+    "package.json",
+    "CONTRIBUTING",
+    "README"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
