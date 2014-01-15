@@ -5,6 +5,7 @@
   "homepage": "https://github.com/BrandwatchLtd/twitter-intents",
   "main": "twitter-intents.js",
   "scripts": {
+    "postinstall": "bower install --config.directory=test/vendor",
     "test": "mocha-phantomjs -R dot /test/index.html",
     "start": "echo 'Tests available at: http://localhost:8080/test/index.html' && static",
     "lint": "jshint --show-non-errors --config jshint.json twitter-intents.js",
@@ -16,7 +17,8 @@
     "jshint": "2.4.1",
     "mocha-phantomjs": "3.3.1",
     "phantomjs": "1.9.2-6",
-    "node-static": "0.7.3"
+    "node-static": "0.7.3",
+    "bower": "1.2.8"
   },
   "repository": "git@github.com:BrandwatchLtd/twitter-intents.git",
   "author": "Aron Carroll <aron@brandwatch.com>",
