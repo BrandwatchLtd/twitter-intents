@@ -91,6 +91,22 @@ be the module name ending with `-test.js`.
 [1]: http://visionmedia.github.com/mocha/
 [2]: http://sinonjs.org/docs
 
+Releases
+-------
+
+Releases can be created by using the `./version` script, which will
+
+* Update `package.json` with the new version string
+* Update `bower.json` with the new version string
+* Commit the changes
+* Create a new tag with that version
+
+Example:
+
+```bash
+./version 1.2.3
+```
+
 License
 -------
 
