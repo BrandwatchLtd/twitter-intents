@@ -1,0 +1,19 @@
+{
+  "name": "twitter-intents",
+  "version": "1.0.0-dev",
+  "ignore": [
+    "**/.*",
+    "test",
+    "package",
+    "bower.json",
+    "jshint.json",
+    "package.json",
+    "CONTRIBUTING",
+    "README"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "1.17.0",
+    "sinonjs-built": "1.7.3"
+  }
+}
