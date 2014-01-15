@@ -1,5 +1,11 @@
 describe('TwitterIntents', function () {
-  // Trigger click events on an element.
+  function each(array, fn, context) {
+    for (var i = 0, length = array.length; i < length; i += 1) {
+      fn.call(context, array[i], i, array);
+    }
+  }
+
+  // Trigger click events on an element. Returns true if the default was prevented.
   function click(el) {
     if (document.createEvent) {
       var evt = document.createEvent('HTMLEvents');
@@ -7,7 +13,7 @@ describe('TwitterIntents', function () {
       return !el.dispatchEvent(evt);
     } else {
       var evt = document.createEventObject();
-      return el.fireEvent('onclick', evt);
+      return !el.fireEvent('onclick', evt);
     }
   }
 
@@ -56,34 +62,34 @@ describe('TwitterIntents', function () {
 
     describe('when a twitter intent is clicked', function () {
       it('opens a popup window', function () {
-        [1, 2, 3].forEach(function (id) {
-          var el = this.fixture.querySelector('#el-' + id);
+        each([0, 1, 2], function (index) {
+          var el = this.fixture.children[index];
           click(el);
           assert.called(this.context.open);
         }, this);
       });
 
       it('when a child element is clicked', function () {
-        var el = this.fixture.querySelector('#el-4 span');
+        var el = this.fixture.children[3].firstChild;
         click(el);
         assert.called(this.context.open);
         assert.calledWith(this.context.open, el.parentNode.href);
       });
 
       it('opens the popup with the url of the clicked element', function () {
-        var el = this.fixture.querySelector('#el-1');
+        var el = this.fixture.children[0];
         click(el);
         assert.calledWith(this.context.open, el.href);
       });
 
       it('prevents the default browser action', function () {
-        var el = this.fixture.querySelector('#el-1');
+        var el = this.fixture.children[0];
         var isDefaultPrevented = click(el);
         assert(isDefaultPrevented === true, 'default event action should be prevented');
       });
 
       it('opens the text editor in the middle of the browser window', function () {
-        var el = this.fixture.querySelector('#el-1');
+        var el = this.fixture.children[0];
         click(el);
 
         var windowOptions = this.context.open.lastCall.args[2];
@@ -96,8 +102,8 @@ describe('TwitterIntents', function () {
 
     describe('when another element is clicked', function () {
       it('does not open a popup window', function () {
-        [5, 6, 7].forEach(function (id) {
-          var el = this.fixture.querySelector('#el-' + id);
+        each([4, 5, 6], function (index) {
+          var el = this.fixture.children[index];
           click(el);
           assert.notCalled(this.context.open);
         }, this);
@@ -111,12 +117,11 @@ describe('TwitterIntents', function () {
         if (this.fixture.addEventListener) {
           target = sinon.stub(this.fixture, 'addEventListener');
         } else {
-          target = sinon.stub(this.fixture, 'attachEvent');
+          target = this.fixture.attachEvent = sinon.spy();
         }
         this.intent.register();
 
         assert.notCalled(target);
-        target.restore();
       });
     });
   });
@@ -129,7 +134,7 @@ describe('TwitterIntents', function () {
     it('unbinds the event handlers', function () {
       this.intent.unregister();
 
-      var el = this.fixture.querySelector('#el-1');
+      var el = this.fixture.firstChild;
       click(el);
       assert.notCalled(this.context.open);
     });
