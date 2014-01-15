@@ -63,7 +63,7 @@ Testing
 -------
 
 The entire test suite is run on Travis CI on each push you can check the current
-state at any time by visiting: https://travis-ci.org/readmill/m.js
+state at any time by visiting: https://travis-ci.org/BrandwatchLtd/twitter-intents
 
 To run the suite locally using phantomjs[1] run:
 
