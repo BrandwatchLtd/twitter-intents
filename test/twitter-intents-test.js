@@ -32,11 +32,18 @@ describe('TwitterIntents', function () {
       '<p id="el-7">non-anchor tag</p>'
     ].join('\n');
 
+    // Fake window object!
     this.context = {
       open: sinon.spy(),
-      screen: {
-        width: 1024,
-        height: 726
+      screenTop: 50,
+      screenLeft: 100,
+      outerWidth: 1024,
+      outerHeight: 726,
+      document: {
+        documentElement: {
+          offsetWidth: 1024,
+          offsetHeight: 726
+        }
       }
     };
 
@@ -89,8 +96,8 @@ describe('TwitterIntents', function () {
         var windowOptions = this.context.open.lastCall.args[2];
         assert(windowOptions.indexOf('width=550') > -1, 'popup should be 550px wide');
         assert(windowOptions.indexOf('height=420') > -1, 'popup should be 420px high');
-        assert(windowOptions.indexOf('left=237') > -1, 'popup should be horizontally centered');
-        assert(windowOptions.indexOf('top=153') > -1, 'popup should be vertically centered');
+        assert(windowOptions.indexOf('left=337') > -1, 'popup should be horizontally centered');
+        assert(windowOptions.indexOf('top=203') > -1, 'popup should be vertically centered');
       });
     });
 

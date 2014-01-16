@@ -20,19 +20,23 @@
  * See: http://dev.twitter.com/docs/intents
  */
 (function (context) {
+  'use strict';
+
   var intentRegex = /twitter\.com(\:\d{2,4})?\/intent\/(\w+)/,
       width = 550,
       height = 420;
 
   function openWindow(url, window) {
-    var left = 0, top = 0,
-        winHeight = window.screen.height,
-        winWidth = window.screen.width,
-        windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
+    var screenTop = window.screenTop,
+        screenLeft = window.screenLeft,
+        windowWidth = window.outerWidth || window.document.documentElement.offsetWidth,
+        windowHeight = window.outerHeight || window.document.documentElement.offsetHeight,
+        windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes',
+        left = screenLeft, top = screenTop;
 
-    left = Math.round((winWidth / 2) - (width / 2));
-    if (winHeight > height) {
-      top = Math.round((winHeight / 2) - (height / 2));
+    left += Math.round((windowWidth / 2) - (width / 2));
+    if (windowHeight > height) {
+      top += Math.round((windowHeight / 2) - (height / 2));
     }
 
     window.open(url, 'intent', windowOptions + ',width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
