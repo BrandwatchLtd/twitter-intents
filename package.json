@@ -5,7 +5,7 @@
   "homepage": "https://github.com/BrandwatchLtd/twitter-intents",
   "main": "twitter-intents.js",
   "scripts": {
-    "test": "mocha-headless-chrome -f ./test/index.html -r dot -v",
+    "test": "mocha-headless-chrome -a no-sandbox -f ./test/index.html -r dot",
     "start": "echo 'Tests available at: http://localhost:8080/test/index.html' && static",
     "lint": "jshint --show-non-errors --config jshint.json twitter-intents.js",
     "build": "uglifyjs twitter-intents.js --mangle --comments '/Copyright \\d{3}/' --output twitter-intents.min.js",
