@@ -1,2 +1,3 @@
+sudo: required
 language: node_js
 script: npm run-script ci
