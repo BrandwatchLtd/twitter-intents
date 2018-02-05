@@ -13,7 +13,5 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "mocha": "1.17.0",
-    "sinonjs-built": "1.7.3"
   }
 }
