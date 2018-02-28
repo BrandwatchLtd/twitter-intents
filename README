@@ -88,7 +88,7 @@ be the module name ending with `-test.js`.
 - Mocha[1]: Test runner, we use the `bdd` style.
 - Sinon[2]: Mocking and stubbing library.
 
-[1]: http://visionmedia.github.com/mocha/
+[1]: http://mochajs.org/
 [2]: http://sinonjs.org/docs
 
 Releases
