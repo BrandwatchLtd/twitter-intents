@@ -1,4 +1,4 @@
-# TwitterIntents
+# TwitterIntents [![npm version](https://badge.fury.io/js/%40brandwatch%2Ftwitter-intents.svg)](https://badge.fury.io/js/%40brandwatch%2Ftwitter-intents)
 
 A replacement for the Twitter Intents [library](https://dev.twitter.com/docs/intents) for those that don't need
 widget creation or event support. This will open all Twitter intent urls

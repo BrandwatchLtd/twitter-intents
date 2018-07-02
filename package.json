@@ -1,5 +1,5 @@
 {
-  "name": "twitter-intents",
+  "name": "@brandwatch/twitter-intents",
   "version": "1.0.0",
   "description": "A minimal stand-in for the Twitter intents library",
   "homepage": "https://github.com/BrandwatchLtd/twitter-intents",
@@ -18,8 +18,10 @@
     "sinon": "^4.2.2",
     "uglify-js": "3.3.9"
   },
+  "files": [
+    "twitter-intents.js"
+  ],
   "repository": "git@github.com:BrandwatchLtd/twitter-intents.git",
   "author": "Aron Carroll <aron@brandwatch.com>",
-  "license": "MIT",
-  "readmeFilename": "README"
+  "license": "MIT"
 }
