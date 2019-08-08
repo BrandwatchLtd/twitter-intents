@@ -1,5 +1,5 @@
 {
-  "name": "@brandwatch/twitter-intents",
+  "name": "twitter-intents",
   "version": "1.0.0",
   "description": "A minimal stand-in for the Twitter intents library",
   "homepage": "https://github.com/BrandwatchLtd/twitter-intents",
